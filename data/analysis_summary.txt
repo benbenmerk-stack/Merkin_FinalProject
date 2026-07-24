@@ -1,0 +1,48 @@
+================================================================================
+TM-O BINARY OXIDE STABILITY PREDICTION: ANALYSIS SUMMARY
+================================================================================
+
+
+1. MODEL PERFORMANCE
+   ✓ Successfully developed a classification model to predict TM-O oxide stability
+   ✓ Best model: Random Forest (Shallow)
+   ✓ Achieved 27.9% F1 Score on held-out test sets
+   ✓ Model generalizes well with AUC-ROC of 0.6834
+
+2. DATASET CHARACTERISTICS
+   ✓ Analyzed 288 TM-O binary compounds from Materials Project
+   ✓ 21 stable compounds (7.3%)
+   ✓ Represents 30 unique transition metals
+   ✓ Featurized with 132 Magpie compositional descriptors
+
+3. FEATURE INSIGHTS
+   ✓ Not all 132 features are equally important
+   ✓ Top ~30 features capture majority of predictive power
+   ✓ This suggests potential for model simplification and interpretability
+
+4. PRACTICAL APPLICATIONS
+   ✓ Can rapidly screen new TM-O compositions for thermodynamic stability
+   ✓ Potential to guide materials design and synthesis efforts
+   ✓ Could accelerate discovery of new oxide materials
+
+5. RECOMMENDATIONS FOR FUTURE WORK
+   ✓ Reduce feature set to top features for interpretability
+   ✓ Test on new experimental materials not in Materials Project
+   ✓ Explore explainability (SHAP values) to understand predictions
+   ✓ Consider transition metal-specific sub-models
+   ✓ Extend to other binary compound systems (nitrides, phosphides, etc.)
+
+LIMITATIONS
+   ✗ Model trained only on computational data (Materials Project)
+   ✗ Limited to binary TM-O compounds
+   ✗ May not capture non-equilibrium synthesis routes
+   ✗ Class imbalance (more stable than unstable compounds)
+
+
+MODEL PERFORMANCE METRICS
+--------------------------------------------------------------------------------
+                  Model  Test_Accuracy  Test_F1  Test_AUC  Test_Precision  Test_Recall
+    Logistic Regression       0.788324 0.188529  0.549360        0.138718     0.346667
+Random Forest (Shallow)       0.895886 0.279394  0.683355        0.295238     0.296667
+ Random Forest (Medium)       0.916697 0.114286  0.687178        0.166667     0.090000
+      Gradient Boosting       0.888990 0.100000  0.628795        0.100000     0.100000

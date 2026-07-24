@@ -12,5 +12,5 @@ Filtering criteria applied:
 
 Final dataset statistics:
   Stable compounds: 21
-  Metals: 179
+  Metals: 181
   Transition metals represented: 30

@@ -1,35 +1,28 @@
 # Data Directory
 
-## Dataset Documentation
 
-This directory contains processed datasets used in the materials science analysis pipeline. All raw data should be sourced from external APIs and not committed to this repository if larger than 50 MB.
+## Datasets
 
-### Datasets
+tm_oxygen_binary_compounds.csv
+- MP Dataset of binary transition metal oxides, fetched externally
 
-| Filename | Source | Description | Size | Status |
-|----------|--------|-------------|------|--------|
-| | | | | |
+tm_oxygen_binary_compounds_magpie_features.csv
+- Binary transition metal oxide dataset featurized with Magpie using Matminer
 
-*Add entries as datasets are acquired and processed.*
+stability_classification_results.csv
+- Test results from the four different models
+
+magpie_feature_names.txt
+- List of 132 Magpie features
+
+final_results_table.csv
+- Accuracy, F1 Score, AUC, Precision, and Recall for the four models
 
 ## Data Sources
 
-### External APIs & Databases
-
 - **Materials Project API** (`mp-api`): Crystal structure and property data for inorganic materials
-- **JARVIS** (`jarvis-tools`): Joint Automated Repository for Various Integrated Simulations
 - **Matminer** (`matminer`): Materials informatics feature generation and descriptors
 
-### Data Acquisition
+## Data Acquisition
 
 All data is fetched programmatically in `../notebooks/01_data_acquisition.ipynb` using API credentials stored in `.env` (not committed).
-
-## Processing Notes
-
-- Raw CSV files are processed in `02_eda_featurization.ipynb`
-- Missing values and outliers are handled according to domain-specific criteria
-- Feature engineering and scaling applied as documented in the featurization notebook
-
-## Figures
-
-Generated plots and visualizations are saved in the `figures/` subdirectory with descriptive names indicating the analysis step and content (e.g., `02_correlation_heatmap.png`, `03_model_performance_comparison.png`).

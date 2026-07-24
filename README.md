@@ -1,15 +1,17 @@
 # Merkin_FinalProject
 
-## Project Overview
+## Project Title: Finding the best model to predict transition metal oxide stability
 
-This project applies machine learning and data science techniques to materials science data, leveraging materials databases and computational methods to predict and analyze material properties.
+## Scientific Question
 
-## Project Objectives
+Which type of machine learning model is best for predicting transition metal oxide stability?
 
-- Acquire and preprocess materials science datasets from external APIs and repositories
-- Perform exploratory data analysis and feature engineering on materials data
-- Develop and compare machine learning models for property prediction
-- Visualize results and provide interpretable insights
+## Data
+
+All data for this project comes from Materials Project API. Access is recieved through the notebooks.
+
+[1]M. K. Horton et al., “Accelerated data-driven materials science with the Materials Project,” Nature Materials, July 2025, doi: 10.1038/s41563-025-02272-0.
+[2]A. Jain et al., “Commentary: The Materials Project: A materials genome approach to accelerating materials innovation,” APL Materials, vol. 1, no. 1, p. 011002, July 2013, doi: 10.1063/1.4812323.
 
 ## Quick Start
 
@@ -66,33 +68,13 @@ Merkin_FinalProject/
 3. **Modeling** (`03_modeling.ipynb`): Train and evaluate machine learning models
 4. **Results & Visualization** (`04_results_visualization.ipynb`): Interpret results and create publication-quality figures
 
-## Data
 
-See `data/README.md` for detailed information about datasets used in this project.
+## Summary of Key Results
 
-## Environment
+I compared random forests (shallow and medium), gradient boosting, and logistic regression models. Going by the AUC, the best model was a gradient boosting model, at 0.684. This model also had the best precision and good accuracy, though its recall was weaker. Overall all the models performed better than random. I also found that the average deviation Mendeleev Number is the feature of greatest importance here when predicting material stability.
 
-The project uses a Conda environment with the following key packages:
-- **Data Science**: pandas, numpy, scipy, scikit-learn
-- **Visualization**: matplotlib, seaborn, plotly
-- **Materials Science**: pymatgen, mp-api, jarvis-tools, matminer
-- **ML/Interpretation**: XGBoost, UMAP, SHAP, imbalanced-learn
-- **Notebooks**: Jupyter, JupyterLab, IPython
+![AUC Results](figures/AUC_Results.png)
 
-See `environment.yml` for complete specifications.
+## Resources
 
-## Contributing
-
-Please ensure reproducibility by:
-- Documenting data sources and acquisition methods
-- Recording random seeds for model training
-- Providing clear markdown explanations in notebooks
-- Saving figures to `data/figures/` with descriptive names
-
-## License
-
-[Add license information if applicable]
-
-## Contact
-
-For questions or issues, please open a GitHub issue or contact the repository owner.
+Copilot was used in helping to generate and debug the code for this project.

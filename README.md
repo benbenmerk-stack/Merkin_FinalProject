@@ -1,10 +1,10 @@
 # Merkin_FinalProject
 
-## Project Title: Finding the best model to predict transition metal oxide stability
+## Project Title: Predicting Transition Metal Oxide Stability
 
 ## Scientific Question
 
-Which type of machine learning model is best for predicting transition metal oxide stability?
+Which type of machine learning model is best for predicting transition metal oxide stability, and will adding structural features improve the prediction?
 
 ## Data
 
@@ -51,30 +51,31 @@ Merkin_FinalProject/
 ├── environment.yml                    # Conda environment specification
 ├── .gitignore                         # Git ignore rules
 ├── notebooks/                         # Jupyter notebooks for analysis pipeline
-│   ├── 01_data_acquisition.ipynb     # Fetch data from materials APIs
-│   ├── 02_eda_featurization.ipynb    # Exploratory analysis & feature engineering
-│   ├── 03_modeling.ipynb             # Model development & training
+│   ├── 01_data_acquisition.ipynb      # Fetch data from materials APIs
+│   ├── 02_eda_featurization.ipynb     # Exploratory analysis & feature engineering
+│   ├── 03_modeling.ipynb              # Model development & training
 │   └── 04_results_visualization.ipynb # Results analysis & visualization
-└── data/                              # Data directory
-    ├── README.md                      # Dataset documentation
-    ├── *.csv                          # Processed datasets
-    └── figures/                       # Generated plots & visualizations
+├── data/                              # Data directory
+│   ├── README.md                      # Dataset documentation
+│   └── *.csv                          # Processed datasets
+└── figures/                           # Generated plots & visualizations
+
 ```
 
 ## Workflow
 
-1. **Data Acquisition** (`01_data_acquisition.ipynb`): Retrieve materials data from sources like Materials Project API, JARVIS, etc.
-2. **EDA & Featurization** (`02_eda_featurization.ipynb`): Explore data distributions, identify patterns, engineer features for modeling
+1. **Data Acquisition** (`01_data_acquisition.ipynb`): Retrieve materials data from Materials Project API
+2. **EDA & Featurization** (`02_eda_featurization.ipynb`): Explore data distributions and featurize the dataset
 3. **Modeling** (`03_modeling.ipynb`): Train and evaluate machine learning models
 4. **Results & Visualization** (`04_results_visualization.ipynb`): Interpret results and create publication-quality figures
 
 
 ## Summary of Key Results
 
-I compared random forests (shallow and medium), gradient boosting, and logistic regression models. Going by the AUC, the best model was a gradient boosting model, at 0.684. This model also had the best precision and good accuracy, though its recall was weaker. Overall all the models performed better than random. I also found that the average deviation Mendeleev Number is the feature of greatest importance here when predicting material stability.
+I compared random forests (shallow and medium), gradient boosting, and logistic regression models to predict binary transition metal oxide stability. Going by the AUC, the best model was a shallow random forest, at 0.7472. Overall all the models performed better than random, though they had fairly low R2s. I then tried a GroupKFold split by transition metal to look for leakage, and found R2 decreased even more, implying that materials with the same transition metal were influincing one another heavily in the ML model. Finally, I ran 5-fold CVs of both random split and GroupKFolds with and without structural features added, and found that structural features do result in an increase in R2 and a decrease in MAE for both kinds of splits. I also found that mean Mendeleev Number was the feature of highest importance in predicting material stability.
 
-![AUC Results](figures/AUC_Results.png)
+![AUC Results](figures/structural_R2_comparison.png)
 
 ## Resources
 
-Copilot was used in helping to generate and debug the code for this project.
+Copilot and ChatGPT were used in helping to generate and debug the code for this project.

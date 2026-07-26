@@ -10,8 +10,9 @@ Which type of machine learning model is best for predicting transition metal oxi
 
 All data for this project comes from Materials Project API. Access is recieved through the notebooks.
 
-[1]M. K. Horton et al., “Accelerated data-driven materials science with the Materials Project,” Nature Materials, July 2025, doi: 10.1038/s41563-025-02272-0.
-[2]A. Jain et al., “Commentary: The Materials Project: A materials genome approach to accelerating materials innovation,” APL Materials, vol. 1, no. 1, p. 011002, July 2013, doi: 10.1063/1.4812323.
+[1] M. K. Horton et al., “Accelerated data-driven materials science with the Materials Project,” Nature Materials, July 2025, doi: 10.1038/s41563-025-02272-0.
+
+[2] A. Jain et al., “Commentary: The Materials Project: A materials genome approach to accelerating materials innovation,” APL Materials, vol. 1, no. 1, p. 011002, July 2013, doi: 10.1063/1.4812323.
 
 ## Quick Start
 
